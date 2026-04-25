@@ -260,6 +260,10 @@ def create_lock_window():
         root.mainloop()
     except Exception:
         pass
+    finally:
+        # 确保 is_locked 一定会被重置，防止卡死
+        is_locked = False
+        uninstall_hooks()
 
 
 # ─── 托盘图标 ─────────────────────────────────────────────────
@@ -336,7 +340,7 @@ def on_change_pwd(icon, item):
 def on_quit(icon, item):
     global is_locked
     if is_locked:
-        return
+        return  # 锁屏中不允许退出
     icon.stop()
     sys.exit(0)
 
