@@ -152,4 +152,4 @@ Password correct -> UnhookWindowsHookEx -> destroy window -> normal
 
 ---
 
-*Made by Lukeclaw*
+*Made by Luke99810*
